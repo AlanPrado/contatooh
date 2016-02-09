@@ -1,0 +1,7 @@
+module.exports = function() {
+	var controller = {};
+	controller.index = function(req, resp) {
+		resp.render('index', { nome : 'Express' });
+	};
+	return controller;
+};

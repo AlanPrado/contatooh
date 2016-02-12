@@ -37,6 +37,9 @@
     "karma": "^0.12.37",
     "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.3.7",
-    "karma-phantomjs-launcher": "^0.1.4"
+    "karma-ng-html2js-preprocessor": "^0.1.2",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-selenium-webdriver-launcher": "0.0.3",
+    "selenium-webdriver": "^2.48.2"
   }
 }

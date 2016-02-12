@@ -1,9 +1,10 @@
-// Karma configuration
+	// Karma configuration
 // Generated on Tue Feb 09 2016 15:27:23 GMT-0200 (Horário brasileiro de verão)
 
 module.exports = function(config) {
   config.set({
-
+	//hostname: 'localhost',
+	//port: 4444,
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '..',
 
@@ -15,14 +16,16 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-		'../public/vendor/angular/angular.js',
-		'../public/vendor/angular-mocks/angular-mocks.js',
-		'../public/vendor/angular-resource/angular-resource.js',
-		'../public/vendor/angular-route/angular-route.js',
-		'../public/js/main.js',
-		'../public/js/controllers/**/*.js',
-		'../public/js/services/**/*.js',
-		'../test/spec/**/*Spec.js'
+		'./public/vendor/angular/angular.js',
+		'./public/vendor/angular-mocks/angular-mocks.js',
+		'./public/vendor/angular-resource/angular-resource.js',
+		'./public/vendor/angular-route/angular-route.js',
+		'./public/js/main.js',
+		'./public/js/controllers/**/*.js',
+		'./public/js/services/**/*.js',
+		'./public/js/directives/**/*.js',
+		'./public/js/directives/meus-componentes/*.html',
+		'./test/spec/**/*Spec.js'
 	],
 
 
@@ -34,8 +37,20 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+		'./public/js/directives/**/*.html': 'ng-html2js'
     },
 
+	plugins : [
+		'karma-ng-html2js-preprocessor',
+		'karma-chrome-launcher',
+		'karma-phantomjs-launcher',
+		'karma-jasmine'
+	],
+	
+	ngHtml2JsPreprocessor: {
+		moduleName: 'templates',
+		stripPrefix: '.*/public/'
+	},
 
     // test results reporter to use
     // possible values: 'dots', 'progress'

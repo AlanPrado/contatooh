@@ -16,7 +16,9 @@
 			$scope.contato.$save()
 				  .then(function(){
 					$scope.mensagem = { texto : 'Salvo com sucesso' };
-					$scope.contato = new Contato(); })
+					$scope.contato = new Contato(); 
+					$scope.$broadcast('contatoSalvo');
+					})
 				  .catch(function(erro) {
 					$scope.mensagem = { texto : 'Não foi possível salvar' };
 				  });

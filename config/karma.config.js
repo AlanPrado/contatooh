@@ -16,16 +16,16 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-		'../public/vendor/angular/angular.js',
-		'../public/vendor/angular-mocks/angular-mocks.js',
-		'../public/vendor/angular-resource/angular-resource.js',
-		'../public/vendor/angular-route/angular-route.js',
-		'../public/js/main.js',
-		'../public/js/controllers/**/*.js',
-		'../public/js/services/**/*.js',
-		'../public/js/directives/**/*.js',
-		'../public/js/directives/meus-componentes/*.html',
-		'../test/spec/**/*Spec.js'
+		'./public/vendor/angular/angular.js',
+		'./public/vendor/angular-mocks/angular-mocks.js',
+		'./public/vendor/angular-resource/angular-resource.js',
+		'./public/vendor/angular-route/angular-route.js',
+		'./public/js/main.js',
+		'./public/js/controllers/**/*.js',
+		'./public/js/services/**/*.js',
+		'./public/js/directives/**/*.js',
+		'./public/js/directives/meus-componentes/*.html',
+		'./test/spec/**/*Spec.js'
 	],
 
 
@@ -68,7 +68,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
 
 
     // enable / disable watching file and executing tests whenever any file changes
@@ -82,6 +82,6 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    //singleRun: false
+    singleRun: false
   })
 }
